@@ -8,8 +8,8 @@
       <link rel="stylesheet" href="../dist/output.css" />
    </head>
    <body class="flex flex-col bg-[#121212] h-screen">
-      <div class="flex overflow-auto">
-         <aside class="bg-black w-[256px] text-[#b2b2b2] hidden lg:flex flex-col sticky top-0">
+      <div class="flex flex-grow overflow-auto">
+         <aside id="sidebar" class="bg-black w-[256px] text-[#b2b2b2] flex flex-col fixed lg:sticky top-0 z-30 h-screen lg:h-auto -translate-x-full lg:translate-x-0 target:translate-x-0 transition-transform peer">
             <a href="#" class="text-white inline-block my-6 px-6 w-full">
                <svg viewBox="0 0 1134 340" class="w-[130px]">
                   <title>Spotify</title>
@@ -56,9 +56,15 @@
                </ul>
             </footer>
          </aside>
+         <a href="#" class="transition-opacity lg:hidden fixed inset-0 bg-black opacity-0 peer-target:opacity-50 peer-target:z-20 cursor-default"></a>
          <div class="flex-1">
             <header class="bg-[#070707] flex-1 flex justify-between items-center py-[10px] px-[32px] sticky top-0 z-10">
                <div class="flex">
+                  <a href="#sidebar" class="mr-[8px] text-[#969696] -ml-1.5 p-1 inline-block lg:hidden">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                     </svg>
+                  </a>
                   <a href="#" class="mr-[8px] text-[#969696] p-1 cursor-not-allowed">
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -335,7 +341,7 @@
             </main>
          </div>
       </div>
-      <a href="#" class="bg-gradient-to-r from-[#af2896] to-[#509bf5] text-white py-4 px-8 hidden justify-between items-center">
+      <a href="#" class="bg-gradient-to-r from-[#af2896] to-[#509bf5] text-white py-4 px-8 flex justify-between items-center">
          <div>
             <p class="text-xs uppercase tracking-wider mb-1">Предварительный просмотр Spotify</p>
             <p class="leading-6 text-[14px] tracking-wide">Зарегистрируйся, чтобы слушать музыку и подкасты без ограничений. Иногда мы будем показывать рекламу, но ты сможешь пользоваться сервисом бесплатно!</p>
